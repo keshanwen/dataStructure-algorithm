@@ -10,18 +10,17 @@
     
 </body>
 </html>
-<script src="./selectionSort.js"></script>
+<script src="./mergerSort.js"></script>
 <script>
 
 // 测试
-const array = [5, 4, 3, 2, 1];
-console.log('原始array:', array);
-selectionSort(array);
-// 原始 array:  [5, 4, 3, 2, 1]
-// array:  		 [1, 4, 3, 2, 5]
-// array:  		 [1, 2, 3, 4, 5]
-// array: 		 [1, 2, 3, 4, 5]
-// array:  		 [1, 2, 3, 4, 5]
+// const arr = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48];
+const arr = [5,6,8,7,4,3,2,1]
+console.time('归并排序耗时');
+console.log('arr :', mergeSort(arr));
+console.timeEnd('归并排序耗时');
+// arr : [2, 3, 4, 5, 15, 19, 26, 27, 36, 38, 44, 46, 47, 48, 50]
+// 归并排序耗时: 0.739990234375ms
 
 
 </script>
