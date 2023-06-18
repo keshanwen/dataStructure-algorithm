@@ -1,3 +1,18 @@
+/* 
+
+状态转移方程
+
+如果dp(i-1) <= 0, 那么 dp(i) = nums[i]
+如果dp(i-1) > 0, 那么dp(i) = dp(i-1) + nums[i]
+
+初始状态
+dp(0) 的值是 nums[0]
+
+最终的解
+最大连续子序列和是所有dp(i)中的最大值max { dp(i) },  i 属于 [0, nums.length)
+
+*/
+
 /*
 function maxSubArray(nums) {
     if (nums === null || nums.length === 0) return 0
