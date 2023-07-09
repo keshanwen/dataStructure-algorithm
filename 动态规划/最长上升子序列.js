@@ -16,7 +16,7 @@ dp[0] = 1
 
 */
 
-function lengthOfLIS(nums) {
+/* function lengthOfLIS(nums) {
     if (nums == null || nums.length == 0) return 0;
     let dp = new Array(nums.length).fill(1)
     let max = dp[0] = 1;
@@ -30,4 +30,29 @@ function lengthOfLIS(nums) {
     return max
 }
 
-console.log(lengthOfLIS([10, 2, 2, 5, 1, 7, 101, 18]))
+console.log(lengthOfLIS([10, 2, 2, 5, 1, 7, 101, 18])) */
+
+
+/* 最长上升子序列 --- 二分搜索 ??????? */
+
+function lengthOfLIS(nums) {
+    if (nums == null || nums.length == 0) return 0;
+    let top = new Array(nums.length).fill(0)
+    let len = 0;
+    for (let i = 0; i < nums.length; i++) {
+        let begin = 0, end = len, num = nums[i];
+        while(begin < end) {
+            let mid = (begin + end) >> 1
+            if (num <= top[mid]) {
+                end = mid
+            } else {
+                begin = mid + 1
+            }
+        }
+        top[begin] = num;
+        if (begin == len) len++
+    }
+    return len
+}
+
+console.log(lengthOfLIS([10, 2, 2, 5, 1, 7, 101, 18])) 
